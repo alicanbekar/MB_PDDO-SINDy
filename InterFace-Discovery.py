@@ -8,11 +8,6 @@ uvals = np.load("dataset/TVals_xy.npy", allow_pickle=True)
 phivals = np.load("dataset/PhiVals_xy.npy", allow_pickle=True)
 intercs = np.load("dataset/interface_coords.npy", allow_pickle=True)
 
-
-# ucs = np.load("u_coordinates.npy", allow_pickle=True)
-# intercs = np.load("interface_coordinates.npy", allow_pickle=True)
-# uvals = np.load("uvals.npy", allow_pickle=True)
-# phivals = np.load("phivals.npy", allow_pickle=True)
 mov_boundary = MB2D(
     numtime=100, delta=4.015, dx=20.0/200, dt=0.4, varname="u", u_coords=ucs
 )
@@ -23,8 +18,7 @@ mov_boundary.calc_vel()
 der_list, u_ders = mov_boundary.gen_derlist(order=2)
 noise_lev = 5
 
-"""
-"""
+
 for i in range(100-1):
     print(i)
     rmse = mean_squared_error(uvals[i], np.zeros(uvals[i].shape), squared=False)

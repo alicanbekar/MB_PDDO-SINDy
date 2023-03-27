@@ -9,15 +9,9 @@ from PDDO_Utilities import *
 import matplotlib.pyplot as plt
 
 from itertools import compress
-import random
 
-random.seed(42)
-print(random.random())
 
 class DM2D:
-    """
-    
-    """
     def __init__(self, numtime, delta, dx, dt, varname):
         self.numtime = numtime
         self.delta = delta
